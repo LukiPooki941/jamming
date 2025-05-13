@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
+import realURL from './practiceAPI.js';
 
 function App() {
     const newArray=[];
@@ -10,16 +11,15 @@ function App() {
 return (
     <div> 
     <link href='./app.css' rel='stylesheet' />
-    <form action='' method='get'>
+    <form action={realURL} method='get'>
     <label for='searchbar'>Search Songs</label>
     <input name='searchbar' type='search' id='searchbar'></input>
     <br/>
     <input type='submit' value='search' id='search'></input>
     </form>
-    <div className='builder'>
-     {/*(songsLoaded === false){
-     <h1>type in a song</h1>} else{
-     <song function ={clickHandle}/>}*/}
+    <div className='builder'> 
+     {/*<h1>type in a song</h1> 
+     <song info = {getSongs} function ={clickHandle}/>*/}
     </div>
     <form action='' method='post'>
     <div className='results'>
