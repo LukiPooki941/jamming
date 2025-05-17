@@ -1,23 +1,38 @@
-const apiKey = '5512ce31c5264f6eaa0f445c2c9fd0c1'
-const baseURL = ' https://api.spotify.com.'
-const genreRequestEndpoint = 'https://api.spotify.com/v1/tracks/{11dFghVXANMlKmJXsNCbNl}/'
-//const requestParams = `?api_key=${apiKey}`
-const realURL = baseURL + genreRequestEndpoint + apiKey;
+import React from 'react';
 
-/*const getSongs = async() => {
-    const apiKey = '5512ce31c5264f6eaa0f445c2c9fd0c1'
-    const baseURL = ' https://api.spotify.com.'
-    const genreRequestEndpoint = 'https://api.spotify.com/v1/tracks/{11dFghVXANMlKmJXsNCbNl}'
-    const requestParams = `?api_key=${apiKey}`
-    const realURL = baseURL + genreRequestEndpoint + requestParams;
-  try{ const response = await fetch(realUrl);
-   if(response.ok){
-    const jsonResponse = await response.json();
-    return jsonResponse;
-    }} catch(err){
-        alert(err)}
-    };*/
+const searchMaster = 
+const search_url = `https://api.spotify.com/v1/search?q=${searchMaster}&type=track`;
 
 
 
-export default realURL;
+
+async function getSongs() {
+const searchMaster = 
+const search_url = `https://api.spotify.com/v1/search?q=${searchMaster}&type=track`;
+
+
+
+
+    let accessToken = localStorage.getItem('access_token');
+  try{
+    const response = await fetch(search_url, {
+      headers: {
+        Authorization: 'Bearer ' + accessToken
+      }
+    });
+    if(response.ok){
+  
+   const data = await response.json();
+   return <p>{data}</p>;
+}} catch(error){
+        alert(error)
+    }
+
+  }
+
+
+  
+
+
+
+export default getSongs;
